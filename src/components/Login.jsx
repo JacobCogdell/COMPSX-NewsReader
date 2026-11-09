@@ -26,6 +26,7 @@ function Login() {
     try {
       login(username, password, selectedRole);
       // Redirect to saved articles after successful login
+      // This feels strange to me.  I would change it to home but I'm not going to change the base behavior
       navigate('/saved');
     } catch (err) {
       setError('Login failed. Please try again.');
@@ -71,7 +72,7 @@ function Login() {
               onChange={(e) => setSelectedRole(e.target.value)}
             >
               <option value="regular">Regular User</option>
-              <option value="premium">Premium User</option>
+              <option value="admin">Admin User</option>
             </select>
           </div>
 
@@ -83,7 +84,7 @@ function Login() {
         <div className="demo-accounts">
           <p className="demo-title">Demo Accounts (for testing):</p>
           <p>Any username/password combination will work</p>
-          <p>Select "Regular" or "Premium" to test different access levels</p>
+          <p>Select "Regular" or "Admin" to test different access levels</p>
         </div>
       </div>
     </div>
